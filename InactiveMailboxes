@@ -1,0 +1,2 @@
+get-mailbox -ResultSize Unlimited | Get-MailboxStatistics | Where{$_.Lastlogontime -lt (Get-Date).AddDays(-180)} | Select DisplayName, LastLoggedOnUserAccount, LastLogonTime | Export-Csv -Path C:\MailboxesNotSign
+edIn_6Months.csv -NoTypeInformation
